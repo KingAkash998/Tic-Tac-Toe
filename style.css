@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide{
+  display: none;
+}
+
+.win{
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  padding: 3rem;
+  text-align: center;
+  align-content: center;
+  z-index: 1;
+}
+@property --angle{
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.win::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle),red,blue,green,yellow,brown,red);
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin{
+    from{
+        --angle : 0deg;
+    }
+    to{
+        --angle : 360deg;
+    }
+}
+
+.win p{
+    margin-bottom: 8rem;
+    font-size: 1.8rem;
+    background-color: transparent;
+    color: aqua;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #0e0e18, #0c413a9d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3rem;
+  position: relative;
+}
+
+.container h1 {
+  border-radius: 1rem;
+  box-shadow: 0 0 15px black, inset 0 0 4px black;
+  padding: 1rem;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 4px rgb(253, 246, 246);
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+
+.gameContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 22rem;
+  height: 22rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  height: 6rem;
+  width: 6rem;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  background: rgba(190, 255, 61, 0.767);
+  box-shadow: 0 8px 15px black, inset 0 0 5px rgba(0, 0, 0, 0.459);
+  color: black;
+  font-size: 3rem;
+}
+
+button{
+  padding: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 8px 15px black, inset 0 0 5px rgba(0, 0, 0, 0.459);
+  border-radius: 1rem;
+  background-color:#0e0e18;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+
+@media (min-width : 750px) {
+  .btn{
+    height: 9rem;
+    width: 9rem;
+  }
+  .gameContent{
+    height: 30rem;
+    width: 30rem;
+  }
+  .container{
+    padding: 1rem;
+  }
+  .container h1{
+    margin-bottom: 2rem;
+  }
+}
