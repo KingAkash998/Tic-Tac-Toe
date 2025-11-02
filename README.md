@@ -1,2 +1,2 @@
-# Snake-Game
-This is a simple snake game, Developed for intertaining purpose and also for practice.
+# Tic-Tac-Toe
+This is a simple Tic-Tac-Toe game, Developed for intertaining purpose and also for practice.
